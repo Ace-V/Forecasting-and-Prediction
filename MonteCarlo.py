@@ -2,10 +2,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import datetime as dt
-import yfinance as yf  # Changed this line
+import yfinance as yf  
 
 def get_data(stocks, start, end):
-    stockData = yf.download(stocks, start=start, end=end)  # Changed this line
+    stockData = yf.download(stocks, start=start, end=end) 
     stockData = stockData['Close']
     returns = stockData.pct_change()
     meanReturns = returns.mean()
@@ -41,3 +41,4 @@ for m in range(0,mc_sims):
     plt.xlabel('Days')
     plt.title('MC Simulations of a stock portfolio')
     plt.show()
+
